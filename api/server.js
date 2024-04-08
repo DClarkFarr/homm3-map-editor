@@ -15,6 +15,12 @@ app.get("/template", async (req, res) => {
   res.json(templates);
 });
 
+app.get("/template/:id", async (req, res) => {
+  const template = await fileService.getTemplate(req.params.id);
+
+  res.json(template);
+});
+
 app.get("/test", function (req, res, next) {
   res.json({ msg: "This is CORS-enabled for all origins!" });
 });
