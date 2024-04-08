@@ -2,10 +2,18 @@ require("dotenv").config();
 
 var express = require("express");
 var cors = require("cors");
-const path = require("path");
+var path = require("path");
+var fileService = require("./services/FileService");
+
 var app = express();
 
 app.use(cors());
+
+app.get("/template", async (req, res) => {
+  const templates = await fileService.getTemplates();
+
+  res.json(templates);
+});
 
 app.get("/test", function (req, res, next) {
   res.json({ msg: "This is CORS-enabled for all origins!" });

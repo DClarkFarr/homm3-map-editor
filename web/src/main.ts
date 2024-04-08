@@ -7,8 +7,8 @@ import webRoutes from './routes/webRoutes';
 import { createPinia } from 'pinia';
 
 const router = createRouter({
-  routes: webRoutes,
-  history: createWebHistory(),
+    routes: webRoutes,
+    history: createWebHistory(),
 });
 
 const pinia = createPinia();
