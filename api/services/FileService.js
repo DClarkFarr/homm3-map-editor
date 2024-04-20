@@ -74,6 +74,8 @@ class FileService {
     const blocks = [];
     let currentBlock = [];
 
+    console.log("before blocks", parsedLines, "length", parsedLines.length);
+
     while (parsedLines.length) {
       const line = parsedLines.shift();
       if (line[0].length) {
@@ -84,11 +86,15 @@ class FileService {
       }
 
       const blockLine = currentBlock.length;
-      currentBlock.push({});
+      currentBlock.push([]);
 
       line.forEach((value, i) => {
         currentBlock[blockLine][i] = value;
       });
+    }
+
+    if (currentBlock.length) {
+      blocks.push(currentBlock);
     }
 
     return {

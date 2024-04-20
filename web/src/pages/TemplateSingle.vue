@@ -35,7 +35,7 @@ onMounted(() => {
                         v-for="i in tableCols"
                         :key="`${template.headers[i]}-${i}`"
                     >
-                        {{ template.headers[i - 1] || '(empty)' }}
+                        {{ template.headers[i - 1] }}
                     </td>
                 </tr>
 
@@ -44,7 +44,7 @@ onMounted(() => {
                         v-for="i in tableCols"
                         :key="`${template.categories[i]}-${i}`"
                     >
-                        {{ template.categories[i - 1] || '(empty)' }}
+                        {{ template.categories[i - 1] }}
                     </td>
                 </tr>
 
@@ -54,7 +54,7 @@ onMounted(() => {
                             v-for="(li, i) in template.labels"
                             :key="`${template.labels[i]}-${i}`"
                         >
-                            {{ li || '(empty)' }}
+                            {{ li }}
                         </td>
                     </tr>
                     <tr
@@ -63,11 +63,14 @@ onMounted(() => {
                         :key="`${bi}-${bii}`"
                     >
                         <td
-                            v-for="(_, i) in template.labels"
+                            v-for="(c, i) in b"
                             :key="`${template.labels[i]}-${bi}-${bii}-${i}`"
                         >
-                            {{ b[i] || '' }}
+                            {{ c }}
                         </td>
+                    </tr>
+                    <tr>
+                        <td colspan="100%">&nbsp;</td>
                     </tr>
                 </template>
             </table>
