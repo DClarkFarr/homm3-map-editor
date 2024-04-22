@@ -44,7 +44,7 @@ export const selctColumnOptions = readonly({
     strength: ['weak', 'avg', 'strong'],
 });
 
-export const wideColumns = readonly(['high', 'low', 'density', 'value']);
+export const wideColumns = readonly(['high', 'low', 'strength', 'value']);
 
 const useTemplateStore = defineStore('template', () => {
     const parsedTemplate = ref<ParsedTemplate | null>(null);

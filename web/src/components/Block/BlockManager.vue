@@ -119,7 +119,9 @@ watch(
                 <tr class="tr block-labels">
                     <td></td>
                     <td v-for="(li, i) in labels" :key="`${labels[i]}-${i}`">
-                        {{ li }}
+                        <div>
+                            {{ li }}
+                        </div>
                     </td>
                 </tr>
                 <tr class="tr block" v-for="(row, ri) in form" :key="`${ri}`">
@@ -150,6 +152,7 @@ watch(
                         <template v-else-if="isSelectCol(labels[ci])">
                             <select
                                 class="input input-clear"
+                                :class="{ 'input-wide': isWideCol(labels[ci]) }"
                                 v-model="form[ri][ci]"
                             >
                                 <option
@@ -255,7 +258,6 @@ tr {
 }
 
 .tr.block-labels td {
-    white-space: nowrap;
     background: #bbe9fc;
     border: solid 1px #666;
     font-size: 10px;
