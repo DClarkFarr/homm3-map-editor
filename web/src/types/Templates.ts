@@ -3,7 +3,7 @@ export type Template = {
     name: string;
 };
 
-export type ParsedTemplateBlock = string[];
+export type ParsedTemplateBlock = string[][];
 
 export type ParsedTemplate = {
     headers: string[];

@@ -22,7 +22,6 @@ body {
 }
 
 #app {
-    max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
     background: #fff;
@@ -69,5 +68,18 @@ body {
             // darken background color by 15%
             background-color: darken(#2d6bb3, 15%);
         }
+    }
+
+    &-danger {
+        background-color: #e53e3e;
+
+        &:active {
+            // darken background color by 15%
+            background-color: darken(#e53e3e, 15%);
+        }
+    }
+
+    &-sm {
+        padding: 0.25rem 0.5rem;
     }
 }

@@ -42,6 +42,8 @@ class FileService {
       return rawLine.split(/\t/);
     });
 
+    console.log("raw string was", rawString);
+
     const rawHeaders = parsedLines.shift();
 
     let prevValue = "";
